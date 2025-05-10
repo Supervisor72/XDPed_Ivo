@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genera Report Punti Vendita</title>
+</head>
+<body>
+    <h2>Generatore Report Punti Vendita</h2>
+
+    <p>Inserisci i valori direttamente nel codice per generare il report.</p>
+
+    <button type="button" onclick="openWhatsApp()">Genera Report WhatsApp</button>
+
+    <script>
+        function openWhatsApp() {
+            // Valori inseriti manualmente nel codice
+            var fanoVenduto = 24; // Esempio di valore, inserisci il tuo valore
+            var fanoPercentuale = 17.10; // Esempio di valore, inserisci il tuo valore
+
+            var monsanoVenduto = 0; // Esempio di valore, inserisci il tuo valore
+            var monsanoPercentuale = 0; // Esempio di valore, inserisci il tuo valore
+
+            var osimoVenduto = 323; // Esempio di valore, inserisci il tuo valore
+            var osimoPercentuale = 32.2; // Esempio di valore, inserisci il tuo valore
+
+            var macerataVenduto = 300; // Esempio di valore, inserisci il tuo valore
+            var macerataPercentuale = 19.4; // Esempio di valore, inserisci il tuo valore
+
+            var civitanovaVenduto = 180; // Esempio di valore, inserisci il tuo valore
+            var civitanovaPercentuale = 12.5; // Esempio di valore, inserisci il tuo valore
+
+            var pesaroVenduto = 379; // Esempio di valore, inserisci il tuo valore
+            var pesaroPercentuale = 34.8; // Esempio di valore, inserisci il tuo valore
+
+            // Prepara il messaggio per WhatsApp nel formato richiesto
+            var message = `Salve\nValori Xd ped\n\n` +
+                          `- Fano              €${fanoVenduto.toString().padStart(3)}       -  ${fanoPercentuale.toFixed(2).padStart(5)}%\n` +
+                          `- Monsano       €${monsanoVenduto.toString().padStart(3)}        -   ${monsanoPercentuale.toFixed(2).padStart(5)}%\n` +
+                          `- Osimo          €${osimoVenduto.toString().padStart(3)}     -  ${osimoPercentuale.toFixed(2).padStart(5)}%\n` +
+                          `- Macerata     €${macerataVenduto.toString().padStart(3)}     -   ${macerataPercentuale.toFixed(2).padStart(5)}%\n` +
+                          `- Civitanova    €${civitanovaVenduto.toString().padStart(3)}   -  ${civitanovaPercentuale.toFixed(2).padStart(5)}%\n` +
+                          `- Pesaro          €${pesaroVenduto.toString().padStart(3)}    -  ${pesaroPercentuale.toFixed(2).padStart(5)}%`;
+
+            // Codifica il messaggio per WhatsApp e apri la chat
+            var whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+</body>
+</html>
