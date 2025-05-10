@@ -8,39 +8,75 @@
 <body>
     <h2>Generatore Report Punti Vendita</h2>
 
-    <p>Inserisci i valori direttamente nel codice per generare il report.</p>
+    <form id="form">
+        <label for="fanoVenduto">Venduto Fano (€):</label>
+        <input type="number" id="fanoVenduto" placeholder="Inserisci venduto Fano" required><br><br>
 
-    <button type="button" onclick="openWhatsApp()">Genera Report WhatsApp</button>
+        <label for="fanoPercentuale">Percentuale Fano (%):</label>
+        <input type="number" id="fanoPercentuale" placeholder="Inserisci percentuale Fano" required><br><br>
+
+        <label for="monsanoVenduto">Venduto Monsano (€):</label>
+        <input type="number" id="monsanoVenduto" placeholder="Inserisci venduto Monsano" required><br><br>
+
+        <label for="monsanoPercentuale">Percentuale Monsano (%):</label>
+        <input type="number" id="monsanoPercentuale" placeholder="Inserisci percentuale Monsano" required><br><br>
+
+        <label for="osimoVenduto">Venduto Osimo (€):</label>
+        <input type="number" id="osimoVenduto" placeholder="Inserisci venduto Osimo" required><br><br>
+
+        <label for="osimoPercentuale">Percentuale Osimo (%):</label>
+        <input type="number" id="osimoPercentuale" placeholder="Inserisci percentuale Osimo" required><br><br>
+
+        <label for="macerataVenduto">Venduto Macerata (€):</label>
+        <input type="number" id="macerataVenduto" placeholder="Inserisci venduto Macerata" required><br><br>
+
+        <label for="macerataPercentuale">Percentuale Macerata (%):</label>
+        <input type="number" id="macerataPercentuale" placeholder="Inserisci percentuale Macerata" required><br><br>
+
+        <label for="civitanovaVenduto">Venduto Civitanova (€):</label>
+        <input type="number" id="civitanovaVenduto" placeholder="Inserisci venduto Civitanova" required><br><br>
+
+        <label for="civitanovaPercentuale">Percentuale Civitanova (%):</label>
+        <input type="number" id="civitanovaPercentuale" placeholder="Inserisci percentuale Civitanova" required><br><br>
+
+        <label for="pesaroVenduto">Venduto Pesaro (€):</label>
+        <input type="number" id="pesaroVenduto" placeholder="Inserisci venduto Pesaro" required><br><br>
+
+        <label for="pesaroPercentuale">Percentuale Pesaro (%):</label>
+        <input type="number" id="pesaroPercentuale" placeholder="Inserisci percentuale Pesaro" required><br><br>
+
+        <button type="button" onclick="openWhatsApp()">Genera Report WhatsApp</button>
+    </form>
 
     <script>
         function openWhatsApp() {
-            // Valori inseriti manualmente nel codice
-            var fanoVenduto = 24; // Esempio di valore, inserisci il tuo valore
-            var fanoPercentuale = 17.10; // Esempio di valore, inserisci il tuo valore
+            // Recupera i valori inseriti nel modulo
+            var fanoVenduto = document.getElementById("fanoVenduto").value;
+            var fanoPercentuale = document.getElementById("fanoPercentuale").value;
 
-            var monsanoVenduto = 0; // Esempio di valore, inserisci il tuo valore
-            var monsanoPercentuale = 0; // Esempio di valore, inserisci il tuo valore
+            var monsanoVenduto = document.getElementById("monsanoVenduto").value;
+            var monsanoPercentuale = document.getElementById("monsanoPercentuale").value;
 
-            var osimoVenduto = 323; // Esempio di valore, inserisci il tuo valore
-            var osimoPercentuale = 32.2; // Esempio di valore, inserisci il tuo valore
+            var osimoVenduto = document.getElementById("osimoVenduto").value;
+            var osimoPercentuale = document.getElementById("osimoPercentuale").value;
 
-            var macerataVenduto = 300; // Esempio di valore, inserisci il tuo valore
-            var macerataPercentuale = 19.4; // Esempio di valore, inserisci il tuo valore
+            var macerataVenduto = document.getElementById("macerataVenduto").value;
+            var macerataPercentuale = document.getElementById("macerataPercentuale").value;
 
-            var civitanovaVenduto = 180; // Esempio di valore, inserisci il tuo valore
-            var civitanovaPercentuale = 12.5; // Esempio di valore, inserisci il tuo valore
+            var civitanovaVenduto = document.getElementById("civitanovaVenduto").value;
+            var civitanovaPercentuale = document.getElementById("civitanovaPercentuale").value;
 
-            var pesaroVenduto = 379; // Esempio di valore, inserisci il tuo valore
-            var pesaroPercentuale = 34.8; // Esempio di valore, inserisci il tuo valore
+            var pesaroVenduto = document.getElementById("pesaroVenduto").value;
+            var pesaroPercentuale = document.getElementById("pesaroPercentuale").value;
 
             // Prepara il messaggio per WhatsApp nel formato richiesto
             var message = `Salve\nValori Xd ped\n\n` +
-                          `- Fano              €${fanoVenduto.toString().padStart(3)}       -  ${fanoPercentuale.toFixed(2).padStart(5)}%\n` +
-                          `- Monsano       €${monsanoVenduto.toString().padStart(3)}        -   ${monsanoPercentuale.toFixed(2).padStart(5)}%\n` +
-                          `- Osimo          €${osimoVenduto.toString().padStart(3)}     -  ${osimoPercentuale.toFixed(2).padStart(5)}%\n` +
-                          `- Macerata     €${macerataVenduto.toString().padStart(3)}     -   ${macerataPercentuale.toFixed(2).padStart(5)}%\n` +
-                          `- Civitanova    €${civitanovaVenduto.toString().padStart(3)}   -  ${civitanovaPercentuale.toFixed(2).padStart(5)}%\n` +
-                          `- Pesaro          €${pesaroVenduto.toString().padStart(3)}    -  ${pesaroPercentuale.toFixed(2).padStart(5)}%`;
+                          `- Fano              €${fanoVenduto}       -  ${parseFloat(fanoPercentuale).toFixed(2)}%\n` +
+                          `- Monsano       €${monsanoVenduto}        -   ${parseFloat(monsanoPercentuale).toFixed(2)}%\n` +
+                          `- Osimo          €${osimoVenduto}     -  ${parseFloat(osimoPercentuale).toFixed(2)}%\n` +
+                          `- Macerata     €${macerataVenduto}     -   ${parseFloat(macerataPercentuale).toFixed(2)}%\n` +
+                          `- Civitanova    €${civitanovaVenduto}   -  ${parseFloat(civitanovaPercentuale).toFixed(2)}%\n` +
+                          `- Pesaro          €${pesaroVenduto}    -  ${parseFloat(pesaroPercentuale).toFixed(2)}%`;
 
             // Codifica il messaggio per WhatsApp e apri la chat
             var whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
