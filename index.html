@@ -4,46 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genera Report Punti Vendita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px; /* Distanza tra i campi */
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Permette ai campi di adattarsi su schermi piccoli */
+        }
+        .input-container label {
+            width: 120px; /* Larghezza fissa per le etichette */
+            font-weight: bold;
+        }
+        .input-container input {
+            width: 160px; /* Larghezza maggiore per i campi input */
+            padding: 10px;
+            font-size: 16px; /* Aumenta la dimensione del testo */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h2>Generatore Report Punti Vendita</h2>
 
     <form id="form">
-        <label for="fanoVenduto">Venduto Fano (€):</label>
-        <input type="number" id="fanoVenduto" placeholder="Inserisci venduto Fano" required><br><br>
+        <div class="input-container">
+            <label for="fanoVenduto">Venduto Fano (€):</label>
+            <input type="number" id="fanoVenduto" placeholder="Venduto Fano" required>
+            <label for="fanoPercentuale">Percentuale Fano (%):</label>
+            <input type="number" id="fanoPercentuale" placeholder="Percentuale Fano" required>
+        </div>
 
-        <label for="fanoPercentuale">Percentuale Fano (%):</label>
-        <input type="number" id="fanoPercentuale" placeholder="Inserisci percentuale Fano" required><br><br>
+        <div class="input-container">
+            <label for="monsanoVenduto">Venduto Monsano (€):</label>
+            <input type="number" id="monsanoVenduto" placeholder="Venduto Monsano" required>
+            <label for="monsanoPercentuale">Percentuale Monsano (%):</label>
+            <input type="number" id="monsanoPercentuale" placeholder="Percentuale Monsano" required>
+        </div>
 
-        <label for="monsanoVenduto">Venduto Monsano (€):</label>
-        <input type="number" id="monsanoVenduto" placeholder="Inserisci venduto Monsano" required><br><br>
+        <div class="input-container">
+            <label for="osimoVenduto">Venduto Osimo (€):</label>
+            <input type="number" id="osimoVenduto" placeholder="Venduto Osimo" required>
+            <label for="osimoPercentuale">Percentuale Osimo (%):</label>
+            <input type="number" id="osimoPercentuale" placeholder="Percentuale Osimo" required>
+        </div>
 
-        <label for="monsanoPercentuale">Percentuale Monsano (%):</label>
-        <input type="number" id="monsanoPercentuale" placeholder="Inserisci percentuale Monsano" required><br><br>
+        <div class="input-container">
+            <label for="macerataVenduto">Venduto Macerata (€):</label>
+            <input type="number" id="macerataVenduto" placeholder="Venduto Macerata" required>
+            <label for="macerataPercentuale">Percentuale Macerata (%):</label>
+            <input type="number" id="macerataPercentuale" placeholder="Percentuale Macerata" required>
+        </div>
 
-        <label for="osimoVenduto">Venduto Osimo (€):</label>
-        <input type="number" id="osimoVenduto" placeholder="Inserisci venduto Osimo" required><br><br>
+        <div class="input-container">
+            <label for="civitanovaVenduto">Venduto Civitanova (€):</label>
+            <input type="number" id="civitanovaVenduto" placeholder="Venduto Civitanova" required>
+            <label for="civitanovaPercentuale">Percentuale Civitanova (%):</label>
+            <input type="number" id="civitanovaPercentuale" placeholder="Percentuale Civitanova" required>
+        </div>
 
-        <label for="osimoPercentuale">Percentuale Osimo (%):</label>
-        <input type="number" id="osimoPercentuale" placeholder="Inserisci percentuale Osimo" required><br><br>
-
-        <label for="macerataVenduto">Venduto Macerata (€):</label>
-        <input type="number" id="macerataVenduto" placeholder="Inserisci venduto Macerata" required><br><br>
-
-        <label for="macerataPercentuale">Percentuale Macerata (%):</label>
-        <input type="number" id="macerataPercentuale" placeholder="Inserisci percentuale Macerata" required><br><br>
-
-        <label for="civitanovaVenduto">Venduto Civitanova (€):</label>
-        <input type="number" id="civitanovaVenduto" placeholder="Inserisci venduto Civitanova" required><br><br>
-
-        <label for="civitanovaPercentuale">Percentuale Civitanova (%):</label>
-        <input type="number" id="civitanovaPercentuale" placeholder="Inserisci percentuale Civitanova" required><br><br>
-
-        <label for="pesaroVenduto">Venduto Pesaro (€):</label>
-        <input type="number" id="pesaroVenduto" placeholder="Inserisci venduto Pesaro" required><br><br>
-
-        <label for="pesaroPercentuale">Percentuale Pesaro (%):</label>
-        <input type="number" id="pesaroPercentuale" placeholder="Inserisci percentuale Pesaro" required><br><br>
+        <div class="input-container">
+            <label for="pesaroVenduto">Venduto Pesaro (€):</label>
+            <input type="number" id="pesaroVenduto" placeholder="Venduto Pesaro" required>
+            <label for="pesaroPercentuale">Percentuale Pesaro (%):</label>
+            <input type="number" id="pesaroPercentuale" placeholder="Percentuale Pesaro" required>
+        </div>
 
         <button type="button" onclick="openWhatsApp()">Genera Report WhatsApp</button>
     </form>
